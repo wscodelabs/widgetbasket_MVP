@@ -1,0 +1,25 @@
+.page-header {
+  background-color: black;
+}
+.sidebar {
+  background-color: #454443;
+  min-height: 400px;
+  color: grey;
+  border: 1px solid black;
+}
+.sidebar-header {
+  background-image: -webkit-linear-gradient(90deg, #2c2a29 0%, #32302f 100%);
+  border: 1px solid black;
+  min-height: 40px;
+  text-align: justify;
+}
+.sidebar-header span {
+  padding:0px 0px 0px 15px;
+  line-height: 34px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-family: 'ProximaNova-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.sidebar-links {
+  color: black;
+}
