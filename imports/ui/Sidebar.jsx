@@ -11,8 +11,8 @@ export default class Sidebar extends Component {
           <span>COMPONENTS</span>
         </div>
         <div className="sidebar-tabs">
-          <a className="sidebar-links">Templates</a>
-          <a className="sidebar-links">Online</a>
+          <a className="sidebar-links sidebar-links-active">Templates</a>
+          <a className="sidebar-links last">Online</a>
         </div>
       </div>
     );

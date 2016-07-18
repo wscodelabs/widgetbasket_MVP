@@ -10,6 +10,7 @@
 .sidebar-header {
   background-image: -webkit-linear-gradient(90deg, #2c2a29 0%, #32302f 100%);
   border: 1px solid black;
+  border-top: none;
   min-height: 40px;
   text-align: justify;
 }
@@ -20,6 +21,21 @@
   letter-spacing: 2px;
   font-family: 'ProximaNova-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+.sidebar-tabs {
+  min-height: 40px;
+  position: relative;
+  padding:5px 10px 18px 55px;
+  border-bottom: 1px outset #ccc;
+}
 .sidebar-links {
-  color: black;
+  padding-bottom: 3px;
+  margin-right: 30px;
+  color: rgba(223, 240, 216, 0.74);
+  line-height: 34px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-family: 'ProximaNova-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.sidebar-links-active {
+  border-bottom: 3px solid #4285f4;
 }
