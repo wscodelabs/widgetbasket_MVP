@@ -8,7 +8,11 @@ export default class Sidebar extends Component {
     return (
       <div className="sidebar">
         <div className="sidebar-header">
-          <span>COMPONENTS</span>
+          <span></span>
+          <div id="search-components">
+            <i id="icon-search" className="fa fa-search"></i>
+            <input className="input-search" type="text" placeholder="Search.."/>
+          </div>
         </div>
         <div className="sidebar-tabs">
           <a className="sidebar-links sidebar-links-active">Templates</a>
