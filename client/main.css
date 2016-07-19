@@ -3,7 +3,7 @@
 }
 .sidebar {
   background-color: #454443;
-  height: 500px;
+  min-height: 400px;
   color: grey;
   border: 1px solid black;
 }
@@ -11,7 +11,6 @@
   background-image: -webkit-linear-gradient(90deg, #2c2a29 0%, #32302f 100%);
   border: 1px solid black;
   border-top: none;
-  min-height: 40px;
   text-align: justify;
 }
 .sidebar-header span {
@@ -38,32 +37,4 @@
 }
 .sidebar-links-active {
   border-bottom: 3px solid #4285f4;
-}
-#search-components {
-  border: 1px solid #111010;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 1px 4px rgba(0, 0, 0, 0.4);
-    background-color: #454342;
-    margin-right: 0px;
-    width: 215px;
-    border-radius: 25px;
-}
-#icon-search {
-  margin-right: 2px;
-  margin-top: -1px;
-  cursor: pointer;
-  height: 23px;
-  width: 23px;
-  background-position: 0px -234px;
-}
-.input-search {
-    margin-left: 3px;
-    width: 185px;
-    color: rgba(255, 255, 255, 0.7);
-    font-family: 'ProximaNova-Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    border: none;
-    background-color: transparent;
-    padding: 0px;
-    height: 23px;
-    float: right;
 }

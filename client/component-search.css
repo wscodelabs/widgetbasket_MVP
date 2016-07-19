@@ -1,0 +1,82 @@
+#component-search {
+  width: auto;
+  height: 23px;
+  margin-top: 5px;
+}
+
+.component-search-bar {
+  width: 23px;
+  height: 23px;
+  border: 1px solid transparent;
+  border-radius: 23px;
+
+  transition: 0.07s linear;
+  -moz-transition: 0.07s linear;
+  -webkit-transition: 0.07s linear;
+}
+
+#component-search.expanded .component-search-bar {
+  border: 1px solid #111010;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 1px 4px rgba(0, 0, 0, 0.4);
+  background-color: #454342;
+  margin-right: 30px;
+  width: 215px;
+}
+
+#component-search .j-icon {
+  height: 23px;
+  width: 23px;
+}
+
+#component-search .j-icon-search {
+  margin-right: 2px;
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+#component-search.expanded .j-icon-search:hover{
+  opacity: 0.5;
+}
+
+#component-search .search-bar-input {
+  font-family: 'ProximaNova-Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  border: none;
+  background-color: transparent;
+  width: 0px;
+  padding: 0px;
+  height: 23px;
+}
+
+#component-search.expanded .search-bar-input {
+  margin-left: 5px;
+  width: 185px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#component-search.expanded .search-bar-input:focus {
+  outline: none;
+}
+
+#component-search .j-icon-close {
+  width: 0px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#component-search.expanded .j-icon-close {
+  margin-top: 2px;
+  width: 23px;
+  opacity: 1;
+}
+
+#component-search.expanded .j-icon-close:hover {
+  opacity: 1.0;
+}
+
+.right {
+  float: right;
+}
+#component-search.expanded .j-icon-search {
+  display: none;
+}

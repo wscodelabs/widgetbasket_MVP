@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar.jsx'
 import PreviewContainer from './PreviewContainer.jsx'
 import MenuBar from './menuBar.jsx'
+import RightSideBar from './RightSideBar.jsx'
 //import Task from './Task.jsx';
 
 // App component - represents the whole app
@@ -19,7 +20,9 @@ export default class App extends Component {
           <div className="col-md-6">
               <PreviewContainer />
           </div>
-          <div className="col-md-3">asdasda</div>
+          <div className="col-md-3">
+            <RightSideBar />
+          </div>
         </div>
       </div>
 

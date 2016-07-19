@@ -18,25 +18,36 @@ export default class Sidebar extends Component {
     const componentType = $(e.target).attr('data-type')
     console.log(this)
     if(componentType == this.state.selectedComponent)
-      return
+    return
 
     $('.sidebar-links').removeClass('sidebar-links-active')
     $(e.target).addClass('sidebar-links-active')
     this.setState({selectedComponent:componentType})
 
   }
-  render() {
 
+  expandSearch(e){
+    $(".header").text("")
+    $("#component-search").addClass("expanded")
+  }
+
+  shrinkSearch(e){
+    $(".header").text("COMPONENT")
+    $("#component-search").removeClass("expanded")
+  }
+
+  render() {
     let SelectedComponent= componentHolderName[this.state.selectedComponent];
     console.log(SelectedComponent)
     return (
-
       <div className="sidebar">
         <div className="sidebar-header">
-          <span></span>
-          <div id="search-components">
-            <i id="icon-search" className="fa fa-search"></i>
-            <input className="input-search" type="text" placeholder="Search.."/>
+          <span className="header">COMPONENTS</span>
+          <div id="component-search" className="right">
+            <div className="j-icon-search" onClick={this.expandSearch}><i className="fa fa-search"></i></div>
+            <div className="j-icon j-icon-close right" onClick={this.shrinkSearch}><i className="fa fa-remove"></i></div><div className="component-search-bar right">
+              <input className="left search-bar-input" placeholder="Search Components" name="ui-search"/>
+            </div>
           </div>
         </div>
         <div className="sidebar-tabs">
@@ -47,7 +58,6 @@ export default class Sidebar extends Component {
           <SelectedComponent />
         </div>
       </div>
-
     );
   }
 }
