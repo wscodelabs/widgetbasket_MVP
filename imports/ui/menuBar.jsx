@@ -7,7 +7,11 @@ export default class MenuBar extends Component {
   render() {
     return (
       <div className="menu-bar black_3d">
-              mnbjkhjkh
+              <ul>
+                <li className="menus">
+
+                </li>
+              </ul>
       </div>
     );
   }
