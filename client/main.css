@@ -3,7 +3,7 @@
 }
 .sidebar {
   background-color: #454443;
-  min-height: 400px;
+  height: 500px;
   color: grey;
   border: 1px solid black;
 }
