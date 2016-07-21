@@ -38,3 +38,22 @@
 .sidebar-links-active {
   border-bottom: 3px solid #4285f4;
 }
+
+.right-bar {
+  width: 21%;
+  float: right;
+}
+
+.left-bar {
+  width: 22%;
+  float: left;
+}
+
+.less-padding {
+  padding: 0px;
+  margin: 14px;
+}
+
+.highlight {
+  border: 1px dashed red !important;
+}

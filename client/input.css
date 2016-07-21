@@ -1,0 +1,66 @@
+.dark-input {
+  width: 50px;
+  margin-left: 20px;
+    font-size: 11px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 1px solid #1a1919;
+    color: #eee;
+    box-shadow: 0 1px 0 rgba(255, 255,255, 0.15), inset 0 1px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255,255, 0.15), inset 0 1px 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255,255, 0.15), inset 0 1px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    height: 25px;
+    line-height: 30px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: 'ProximaNova-Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.dark-input:focus {
+  border: 1px solid #1a1919;
+}
+.dark-label {
+  font-family: 'ProximaNova-Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    vertical-align: middle;
+    margin-top: 4px;
+    font-size: 11px;
+    width: 60px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.input-collection {
+}
+
+.sidebar-content {
+
+}
+
+.dark-input + .dark-label {
+  margin-left: 20px;
+}
+.default-property {
+  padding: 10px 0px 0px 15px;
+  border-bottom: 1px solid black;
+}
+.colorpicker-component {
+  margin-left: 23px;
+  width: 1px;
+}
+.colorpicker-component > .input-group-addon {
+  background-color: rgba(0, 0, 0, 0.25);
+    border: 1px solid #1a1919;
+    border-radius: 4px;
+}
+
+.colorpicker-component > input {
+  background-color: rgba(0, 0, 0, 0.25);
+    border: 1px solid #1a1919;
+    border-radius: 4px;
+    width: 65px;
+    margin-left: 15px;
+    color: #eee;
+    font-size: 11px;
+    height: 25px;
+}
