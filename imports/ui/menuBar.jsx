@@ -7,11 +7,16 @@ export default class MenuBar extends Component {
   render() {
     return (
       <div className="menu-bar black_3d">
-              <ul>
-                <li className="menus">
+         <div className="row">
+           <div className="col-md-9">
 
-                </li>
-              </ul>
+           </div>
+           <div className="col-md-2 col-md-offset-1">
+             <div className="">
+                <a className="btn btn-primary"> <i className="fa fa-2x"></i> Save</a>
+             </div>
+           </div>
+         </div>
       </div>
     );
   }
