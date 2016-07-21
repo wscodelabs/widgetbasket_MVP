@@ -16,6 +16,7 @@ export default class OnlineComponent extends Component {
   }
   render() {
     let allElements = <label>Loading...</label>
+    console.log(this.props.widgetsInfo)
     if(this.props.widgetsInfo){
       allElements = this.props.widgetsInfo.map((widgetInfo)=>{
         return <WidgetComponent widgetInfo={Object.assign({},widgetInfo)} changeState={this.props.changeState} key={widgetInfo.widget._id}/>

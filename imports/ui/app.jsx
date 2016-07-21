@@ -73,7 +73,7 @@ export default class App extends Component {
         </div>
         <div className="row">
           <div className="component-div col-md-3 less-padding left-bar">
-            <Sidebar widgetsInfo={this.state.widgetsInfo} changeState={this.changeState}/>
+            <Sidebar widgetsInfo={window.clone(this.state.widgetsInfo)} changeState={this.changeState}/>
           </div>
           <div className="col-md-6 less-padding">
               <PreviewContainer widget={this.state.widget} elements={this.state.elements} addElementInWidget={this.addElementInWidget} addElement={this.addElement} setSelectedElement={this.setSelectedElement}/>
