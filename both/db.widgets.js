@@ -5,7 +5,7 @@ let widgetDb = new Mongo.Collection("widget")
 Meteor.methods({
   insertWidget:(widget, compoenet)=>{
     // insert Components
-    new ComponentModel().insert(compoenet)
+    new ComponentModel().insertMany(compoenet)
 
     return widgetDb.insert(widget)
   }
