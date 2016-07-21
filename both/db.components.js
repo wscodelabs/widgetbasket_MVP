@@ -1,7 +1,6 @@
 import utils from './utils/utils'
 let componentDb = new Mongo.Collection("components")
 
-
  class ComponentModel {
   constructor(){
 

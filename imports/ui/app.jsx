@@ -9,14 +9,20 @@ import RightSideBar from './RightSideBar.jsx'
 export default class App extends Component {
   constructor(props){
     super(props)
-    this.state = {elements:{},selectedElement:null,widget:{style:{},elements:[]}}
+    this.state = {elements:{},selectedElement:null,widget:{style:{},elements:[]},widgetsInfo:{}}
     this.addElementInWidget = this.addElementInWidget.bind(this)
     this.addElement = this.addElement.bind(this)
     this.setSelectedElement = this.setSelectedElement.bind(this)
     this.changeStyle = this.changeStyle.bind(this)
+    this.saveWidget = this.saveWidget.bind(this)
   }
   componentDidMount(){
     let self=this
+    Meteor.call('getWidgets',function(err,res){
+      if(!err){
+        self.setState({widgetsInfo:res})
+      }
+    })
 
   }
   addElementInWidget(randomKey){
@@ -28,6 +34,19 @@ export default class App extends Component {
     let currentElements = this.state.elements
     currentElements[element.randomKey]=element
     this.setState(currentElements)
+  }
+  saveWidget(){
+    console.log('save clicked');
+    let elements = this.state.elements,
+    widget = this.state.widget
+    Meteor.call('insertWidget',widget,elements,function(err,res){
+      if(!err){
+        console.log(res+" inserted");
+      }
+      else {
+        console.log(err.reason);
+      }
+    })
   }
   setSelectedElement(element){
     this.setState({selectedElement:element})
@@ -41,15 +60,14 @@ export default class App extends Component {
     let style = {}
     if(this.state.elements[this.state.selectedElement])
       style = this.state.elements[this.state.selectedElement].style
-    console.log(style);
     return (
       <div>
         <div className="row top-bar">
-            <MenuBar />
+            <MenuBar saveWidget={this.saveWidget} />
         </div>
         <div className="row">
           <div className="component-div col-md-3 less-padding left-bar">
-            <Sidebar/>
+            <Sidebar widgetsInfo={this.state.widgetsInfo}/>
           </div>
           <div className="col-md-6 less-padding">
               <PreviewContainer widget={this.state.widget} elements={this.state.elements} addElementInWidget={this.addElementInWidget} addElement={this.addElement} setSelectedElement={this.setSelectedElement}/>

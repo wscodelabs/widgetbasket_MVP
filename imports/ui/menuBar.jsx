@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 
 // App component - represents the whole app
 export default class MenuBar extends Component {
+
   render() {
     return (
       <div className="menu-bar black_3d">
@@ -13,7 +14,7 @@ export default class MenuBar extends Component {
            </div>
            <div className="col-md-2 col-md-offset-1">
              <div className="">
-                <a className="btn btn-primary"> <i className="fa fa-2x"></i> Save</a>
+                <a className="btn btn-primary" onClick={this.props.saveWidget}> <i className="fa fa-2x"></i> Save</a>
              </div>
            </div>
          </div>
