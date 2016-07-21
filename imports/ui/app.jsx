@@ -3,7 +3,7 @@ import Sidebar from './Sidebar.jsx'
 import PreviewContainer from './PreviewContainer.jsx'
 import MenuBar from './menuBar.jsx'
 import RightSideBar from './RightSideBar.jsx'
-//import Task from './Task.jsx';
+
 
 // App component - represents the whole app
 export default class App extends Component {
@@ -14,6 +14,10 @@ export default class App extends Component {
     this.addElement = this.addElement.bind(this)
     this.setSelectedElement = this.setSelectedElement.bind(this)
     this.changeStyle = this.changeStyle.bind(this)
+  }
+  componentDidMount(){
+    let self=this
+
   }
   addElementInWidget(randomKey){
     let currentWidget = this.state.widget

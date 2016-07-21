@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PreviewButtonComponent from './previewComponents/PreviewButtonComponent.jsx'
-
-const componentHolderName = {'button':PreviewButtonComponent}
+import PreviewLabelComponent from './previewComponents/PreviewLabelComponent.jsx'
+const componentHolderName = {'button':PreviewButtonComponent,'label':PreviewLabelComponent}
 export default class PreviewContainer extends Component {
   constructor(props){
     super(props)
@@ -12,6 +12,10 @@ export default class PreviewContainer extends Component {
     $(".preview-container").css("border","1px dashed black")
   }
   dragend(e){
+    let offset = $(".preview-container").offset()
+    console.log(e.clientX,e.clientY,offset);
+    window.selectedElement.style.left=e.clientX-offset.left-window.cursorOffset.left
+    window.selectedElement.style.top=e.clientY-offset.top-window.cursorOffset.top
     this.props.addElement(window.selectedElement)
     this.props.addElementInWidget(window.selectedElement.randomKey)
     $(".preview-container").css("border","none")
