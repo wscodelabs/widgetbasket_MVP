@@ -13,6 +13,7 @@ import ImageComponent from './ImageComponent.jsx'
 export default class OnlineComponent extends Component {
 
   render() {
+    
     return (
       <div className="animated slideInLeft">
         <div className="col-md-6 ">

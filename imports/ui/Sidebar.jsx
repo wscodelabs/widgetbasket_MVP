@@ -55,7 +55,7 @@ export default class Sidebar extends Component {
           <a className="sidebar-links last" data-type="OnlineComponents" onClick={this.toggleLink}> Online</a>
         </div>
         <div className="row">
-          <SelectedComponent />
+          <SelectedComponent widgetsInfo={this.props.widgetsInfo}/>
         </div>
       </div>
     );
