@@ -18,8 +18,9 @@ export default class App extends Component {
   }
   componentDidMount(){
     let self=this
-    Meteor.call('getWidgets',function(err,res){
+    Meteor.call('getWidget',function(err,res){
       if(!err){
+        console.log(res);
         self.setState({widgetsInfo:res})
       }
     })
@@ -36,7 +37,6 @@ export default class App extends Component {
     this.setState(currentElements)
   }
   saveWidget(){
-    console.log('save clicked');
     let elements = this.state.elements,
     widget = this.state.widget
     Meteor.call('insertWidget',widget,elements,function(err,res){
