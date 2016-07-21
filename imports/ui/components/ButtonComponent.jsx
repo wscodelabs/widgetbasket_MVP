@@ -3,6 +3,8 @@ import Random from 'random-gen'
 
 export default class ButtonComponent extends Component {
   dragstart(e){
+    let offset = $(e.target).closest("div").offset()
+    window.cursorOffset={left:e.clientX-offset.left,top:e.clientY-offset.top}
     let randomKey = Random.alphaNum(16)
     window.selectedElement={randomKey:randomKey,type:'button',style:{
     position:'absolute',
