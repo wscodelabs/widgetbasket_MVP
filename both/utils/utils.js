@@ -1,6 +1,6 @@
 let utils = {}
 
-utils.ObjectToArray=function(obj, keyName){
+utils.ObjectToArray=function(obj){
   let arr= []
   for( var key in obj){
     if(obj.hasOwnProperty(key)){
