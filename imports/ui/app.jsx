@@ -15,6 +15,7 @@ export default class App extends Component {
     this.setSelectedElement = this.setSelectedElement.bind(this)
     this.changeStyle = this.changeStyle.bind(this)
     this.saveWidget = this.saveWidget.bind(this)
+    this.changeState = this.changeState.bind(this)
   }
   componentDidMount(){
     let self=this
@@ -25,6 +26,11 @@ export default class App extends Component {
       }
     })
 
+  }
+  changeState(widgetInfo){
+    console.log(widgetInfo);
+    this.setState({widget:widgetInfo.widget})
+    this.setState({elements:widgetInfo.elements})
   }
   addElementInWidget(randomKey){
     let currentWidget = this.state.widget
@@ -67,7 +73,7 @@ export default class App extends Component {
         </div>
         <div className="row">
           <div className="component-div col-md-3 less-padding left-bar">
-            <Sidebar widgetsInfo={this.state.widgetsInfo}/>
+            <Sidebar widgetsInfo={this.state.widgetsInfo} changeState={this.changeState}/>
           </div>
           <div className="col-md-6 less-padding">
               <PreviewContainer widget={this.state.widget} elements={this.state.elements} addElementInWidget={this.addElementInWidget} addElement={this.addElement} setSelectedElement={this.setSelectedElement}/>

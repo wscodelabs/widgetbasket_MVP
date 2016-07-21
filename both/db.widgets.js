@@ -14,7 +14,7 @@ Meteor.methods({
     let widgetData= widgetDb.find({}).fetch()
     _.each(widgetData,(widget)=>{
       parsedWidget.push(
-        {widget:widget, elements:new ComponentModel().getComponentOfWidget(widget.elements, "randomKey")}
+        {widget:widget, elements:new ComponentModel().getComponentOfWidget(widget.elements)}
       )
     })
     console.log("widget,", widgetData)

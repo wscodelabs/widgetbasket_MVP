@@ -23,7 +23,7 @@ let componentDb = new Mongo.Collection("components")
 
     let components= componentDb.find({randomKey:{$in:componentRandomKey}}).fetch()
     if(components && components.length)
-      return utils.arrayToObject(components)
+      return utils.arrayToObject(components,"randomKey")
   }
 
   insert(component){

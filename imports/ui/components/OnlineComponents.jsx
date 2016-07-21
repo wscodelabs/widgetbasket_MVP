@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import WidgetComponent from './WidgetComponent.jsx'
 //import Task from './Task.jsx';
 
 import LabelComponent from './LabelComponent.jsx'
@@ -11,20 +11,20 @@ import ImageComponent from './ImageComponent.jsx'
 
 // App component - represents the whole app
 export default class OnlineComponent extends Component {
-
+  constructor(props){
+    super(props)
+  }
   render() {
-    
+    let allElements = <label>Loading...</label>
+    if(this.props.widgetsInfo){
+      allElements = this.props.widgetsInfo.map((widgetInfo)=>{
+        return <WidgetComponent widgetInfo={Object.assign({},widgetInfo)} changeState={this.props.changeState} key={widgetInfo.widget._id}/>
+    })
+    }
+
     return (
-      <div className="animated slideInLeft">
-        <div className="col-md-6 ">
-          <LabelComponent />
-        </div>
-        <div className="col-md-6">
-          <ButtonComponent />
-        </div>
-        <div className="col-md-6">
-          <ImageComponent />
-        </div>
+      <div>
+      {allElements}
       </div>
 
     );
