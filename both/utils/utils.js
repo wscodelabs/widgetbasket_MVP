@@ -10,4 +10,12 @@ utils.objectToArray=function(obj){
   return arr
 }
 
+utils.arrayToObject=function(array, key){
+  let obj={}
+  _.each(array,(data)=>{
+    obj[data[key]]=data
+  })
+  return obj
+}
+
 export default utils

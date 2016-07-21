@@ -19,6 +19,13 @@ let componentDb = new Mongo.Collection("components")
 
   }
 
+  getComponentOfWidget(componentRandomKey){
+
+    let components= componentDb.find({randomKey:{$in:componentRandomKey}}).fetch()
+    if(components && components.length)
+      return utils.arrayToObject(components)
+  }
+
   insert(component){
 
     return componentDb.insert(component)
