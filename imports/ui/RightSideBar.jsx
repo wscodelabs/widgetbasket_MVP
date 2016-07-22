@@ -4,6 +4,7 @@ import Fill from './properties/Fill.jsx'
 import Text from './properties/Text.jsx'
 import Border from './properties/Border.jsx'
 import Shadow from './properties/Shadow.jsx'
+import Animation from './properties/Animation.jsx'
 export default class RightSideBar extends Component {
   constructor(props){
     super(props)
@@ -21,6 +22,7 @@ export default class RightSideBar extends Component {
             <Text style={this.props.style} changeStyle={this.props.changeStyle}/>
             <Border style={this.props.style} changeStyle={this.props.changeStyle}/>
             <Shadow style={this.props.style} changeStyle={this.props.changeStyle}/>
+            <Animation style={this.props.style} changeStyle={this.props.changeStyle}/>
           </div>
 
         </div>

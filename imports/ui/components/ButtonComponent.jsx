@@ -6,7 +6,7 @@ export default class ButtonComponent extends Component {
     let offset = $(e.target).closest("div").offset()
     window.cursorOffset={left:e.clientX-offset.left,top:e.clientY-offset.top}
     let randomKey = Random.alphaNum(16)
-    window.selectedElement={randomKey:randomKey,type:'button',style:{
+    window.selectedElement={randomKey:randomKey,value:'Some Text',type:'button',style:{
     position:'absolute',
     width: '92px',
     height: '32px',
@@ -17,7 +17,9 @@ export default class ButtonComponent extends Component {
     padding: '6px 12px',
     'marginBottom': 0,
     'fontSize': '14px',
-    'fontWeight': 400,
+    'fontWeight': 'normal',
+    'textDecoration':'none',
+    'fontStyle':'normal',
     'lineHeight': 1.42857143,
     'textAlign': 'center',
     'whiteSpace': 'nowrap',
@@ -31,7 +33,9 @@ export default class ButtonComponent extends Component {
     'userSelect': 'none',
     'backgroundImage': 'none',
     border: '1px solid transparent',
-    'borderRadius': '4px'}}
+    'borderRadius': '4px',
+    WebkitAnimationDuration:"2s"
+  }}
   }
   render() {
     return (

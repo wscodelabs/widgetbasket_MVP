@@ -12,7 +12,7 @@ export default class PreviewButtonComponent extends Component {
   }
   render() {
     return (
-        <button style={this.props.style} data-randomKey={this.props.randomKey} className="previewComponents" onClick={this.handleClick}>Some Text</button>
+        <button style={this.props.style} data-randomKey={this.props.randomKey} className="previewComponents" onClick={this.handleClick}>{this.props.value}</button>
     )
   }
 }

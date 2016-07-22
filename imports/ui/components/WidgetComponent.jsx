@@ -8,6 +8,7 @@ export default class WidgetComponent extends Component {
     this.handleChange = this.handleChange.bind(this)
   }
   handleChange(e){
+    this.props.setSelectedElement(null)
     this.props.changeState({widget:this.props.widgetInfo.widget,elements:this.props.widgetInfo.elements})
   }
   render() {

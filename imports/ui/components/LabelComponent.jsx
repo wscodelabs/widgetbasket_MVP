@@ -21,7 +21,8 @@ export default class LabelComponent extends Component {
     whiteSpace: "nowrap",
     verticalAlign: "baseline",
     borderRadius: ".25em",
-    position:"absolute"
+    position:"absolute",
+    WebkitAnimationDuration:"2s"
   }}
   }
   render() {

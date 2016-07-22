@@ -22,3 +22,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
 twbs:bootstrap
 fortawesome:fontawesome
 risul:bootstrap-colorpicker
+mrt:bootstrap-select

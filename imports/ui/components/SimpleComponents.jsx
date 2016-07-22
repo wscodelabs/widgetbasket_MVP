@@ -14,7 +14,7 @@ export default class MenuBar extends Component {
 
   render() {
     return (
-      <div className="animated slideInLeft">
+      <div className="animated slideInLeft flipIn">
       <div className="col-md-6 ">
           <LabelComponent />
       </div>

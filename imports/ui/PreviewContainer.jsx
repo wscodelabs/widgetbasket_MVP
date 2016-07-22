@@ -33,7 +33,7 @@ export default class PreviewContainer extends Component {
     let allElements = this.props.widget.elements.map((randomKey)=>{
       let element = this.props.elements[randomKey]
       let Component = componentHolderName[element.type]
-      return <Component style={element.style} key={randomKey} randomKey={randomKey} setSelectedElement={this.props.setSelectedElement}/>
+      return <Component style={element.style} key={randomKey} value={element.value} randomKey={randomKey} setSelectedElement={this.props.setSelectedElement}/>
     })
     return (
      <div className="preview-container" style={{height:'300px',background:'#fff',position:'relative'}} onDragOver={this.dragover} onDragLeave={this.dragleave} onDrop={this.dragend}>

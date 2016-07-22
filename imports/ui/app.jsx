@@ -3,7 +3,7 @@ import Sidebar from './Sidebar.jsx'
 import PreviewContainer from './PreviewContainer.jsx'
 import MenuBar from './menuBar.jsx'
 import RightSideBar from './RightSideBar.jsx'
-
+import Toolbar from './previewComponents/Toolbar.jsx'
 
 // App component - represents the whole app
 export default class App extends Component {
@@ -16,6 +16,7 @@ export default class App extends Component {
     this.changeStyle = this.changeStyle.bind(this)
     this.saveWidget = this.saveWidget.bind(this)
     this.changeState = this.changeState.bind(this)
+    this.changeValue = this.changeValue.bind(this)
   }
   componentDidMount(){
     let self=this
@@ -26,6 +27,11 @@ export default class App extends Component {
       }
     })
 
+  }
+  changeValue(val){
+    let currentElements = this.state.elements
+    currentElements[this.state.selectedElement].value=val
+    this.setState({elements:currentElements})
   }
   changeState(widgetInfo){
     console.log(widgetInfo);
@@ -63,9 +69,13 @@ export default class App extends Component {
     this.setState({elements:elements})
   }
   render() {
-    let style = {}
+    let style = {},
+    toolbar = null
     if(this.state.elements[this.state.selectedElement])
       style = this.state.elements[this.state.selectedElement].style
+    if(this.state.selectedElement && this.state.elements[this.state.selectedElement].type=="button"){
+      toolbar = <Toolbar style={style} changeStyle={this.changeStyle} value={this.state.elements[this.state.selectedElement].value} changeValue={this.changeValue}/>
+    }
     return (
       <div>
         <div className="row top-bar">
@@ -73,7 +83,7 @@ export default class App extends Component {
         </div>
         <div className="row">
           <div className="component-div col-md-3 less-padding left-bar">
-            <Sidebar widgetsInfo={window.clone(this.state.widgetsInfo)} changeState={this.changeState}/>
+            <Sidebar widgetsInfo={window.clone(this.state.widgetsInfo)} changeState={this.changeState} setSelectedElement={this.setSelectedElement}/>
           </div>
           <div className="col-md-6 less-padding">
               <PreviewContainer widget={this.state.widget} elements={this.state.elements} addElementInWidget={this.addElementInWidget} addElement={this.addElement} setSelectedElement={this.setSelectedElement}/>
@@ -81,6 +91,7 @@ export default class App extends Component {
           <div className="col-md-3 right-bar less-padding">
             <RightSideBar style={style} changeStyle={this.changeStyle}/>
           </div>
+          {toolbar}
         </div>
       </div>
 

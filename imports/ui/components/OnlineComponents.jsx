@@ -19,7 +19,7 @@ export default class OnlineComponent extends Component {
     console.log(this.props.widgetsInfo)
     if(this.props.widgetsInfo){
       allElements = this.props.widgetsInfo.map((widgetInfo)=>{
-        return <WidgetComponent widgetInfo={Object.assign({},widgetInfo)} changeState={this.props.changeState} key={widgetInfo.widget._id}/>
+        return <WidgetComponent widgetInfo={Object.assign({},widgetInfo)} changeState={this.props.changeState} setSelectedElement={this.props.setSelectedElement} key={widgetInfo.widget._id}/>
     })
     }
 
