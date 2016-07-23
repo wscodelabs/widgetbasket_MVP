@@ -6,7 +6,7 @@ export default class Renderer {
     _.each(elements,(element)=>{
       if(!element.style.animationName || element.style.animationName.toUpperCase()=="NONE") return
 
-      styles.css+=this._render({fileName:element.style.AnimationName,extension:"css",folder:"animation"})
+      styles.css+=this._render({fileName:element.style.animationName,extension:"css",folder:"animation"})
     })
 
     return styles
@@ -15,8 +15,7 @@ export default class Renderer {
 
   _render({fileName,extension,folder}){
     SSR.compileTemplate(fileName, Assets.getText(`${folder}/${fileName}.${extension}`));
-    styles.css+=SSR.render(fileName,{})
-    return styles
+    return SSR.render(fileName,{})
   }
 
 }

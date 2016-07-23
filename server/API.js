@@ -14,9 +14,9 @@ let PostRoute = Picker.filter(function( request, response ) {
   return request.method == "POST";
 });
 
-GetRoutes.route('/get/widget/:apikey',function(params,req,response){
+GetRoutes.route('/get/widget/:id',function(params,req,response){
 
-  let widgetData=widgetDb.findOne({_id:id})
+  let widgetData=widgetDb.findOne({_id:params.id})
 
 
   response.setHeader("Access-Control-Allow-Origin", "*");
@@ -30,12 +30,13 @@ GetRoutes.route('/get/widget/:apikey',function(params,req,response){
   const components=new ComponentModel().getComponentOfWidget(widgetData.elements)
   let styles=new Renderer().renderAllAnnimation(components)
 
-  response.write(`window.animationStyles= ${styles.css}`);
-  response.write(`window.widgetDom= ${widgetData.dom}`);
+response.write(`console.log("asdasdas");`);
+  response.write(`window.animationStyles= ${JSON.stringify(styles)};`);
+  response.write(`window.widgetDom= ${JSON.stringify({dom:widgetData.dom})};`);
 
-  let widgetScript=new Renderer()._render({filename:"widgetScript",extension:"js",folder:"js"})
+  let widgetScript=new Renderer()._render({fileName:"widgetScript",extension:"js",folder:"js"})
 
+  response.statusCode=200
   response.end(widgetScript)
 
 });
-

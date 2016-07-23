@@ -27,3 +27,5 @@ Meteor.methods({
     return parsedWidget
   }
 });
+
+export default widgetDb
