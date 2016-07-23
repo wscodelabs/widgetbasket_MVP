@@ -5,9 +5,13 @@ let widgetDb = new Mongo.Collection("widget")
 Meteor.methods({
   insertWidget:(widget, compoenet)=>{
     // insert Components
+    console.log(compoenet)
     new ComponentModel().insertMany(compoenet)
 
-    return widgetDb.insert(widget)
+    if(widget._id)
+      return widgetDb.update({_id:widget._id},{$set:{style:widget.style, elements:widget.elements}})
+    else
+      return widgetDb.insert(widget)
   },
   getWidget:() =>{
     let parsedWidget=[]

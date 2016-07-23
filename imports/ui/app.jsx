@@ -51,6 +51,7 @@ export default class App extends Component {
   saveWidget(){
     let elements = this.state.elements,
     widget = this.state.widget
+    console.log(elements)
     Meteor.call('insertWidget',widget,elements,function(err,res){
       if(!err){
         console.log(res+" inserted");
