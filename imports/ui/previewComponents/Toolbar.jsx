@@ -50,12 +50,14 @@ export default class Toolbar extends Component {
             <div className="input-collection" style={{float:"right"}}>
             <input type="text" style={{height:"35px",width:"100px"}} className="dark-input" value={this.props.value} onChange={this.changeValue}/>
             <input type="number" style={{height:"35px"}} className="dark-input" data-property="fontSize" value={parseInt(this.props.style.fontSize)} onChange={(e)=> this.handleClick(e,e.target.value)}/>
-              <select className="dark-input" style={{marginLeft:"0px",height:"35px",width:'100px'}} data-property="fontFamily" value={this.props.style.fontFamily} onChange={this.handleChange}>
+              <select className="dark-input" style={{marginLeft:"0px",height:"35px",width:'100px'}} data-property="fontFamily" value={this.props.style.fontFamily} onChange={this.handleClick}>
                 <option value={null}>Select..</option>
-                <option value="inset">inset</option>
-                <option value="outset">outset</option>
-                <option value="dashed">dashed</option>
-                <option value="solid">solid</option>
+                <option value="cursive">cursive</option>
+                <option value="fantasy">fanstasy</option>
+                <option value="inherit">inherit</option>
+                <option value="monospace">monospace</option>
+                <option value="sans-serif">sans-serif</option>
+                <option value="serif">serif</option>
               </select>
               </div>
           </div>

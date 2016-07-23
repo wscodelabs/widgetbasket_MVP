@@ -3,13 +3,13 @@ import Random from 'random-gen'
 
 export default class ButtonComponent extends Component {
   dragstart(e){
-    let offset = $(e.target).closest("div").offset()
+    let offset = $(e.target).offset()
     window.cursorOffset={left:e.clientX-offset.left,top:e.clientY-offset.top}
     let randomKey = Random.alphaNum(16)
-    window.selectedElement={randomKey:randomKey,value:'Some Text',type:'button',style:{
+    window.selectedElement={randomKey:randomKey,value:'click Here!',type:'button',style:{
     position:'absolute',
-    width: '92px',
-    height: '32px',
+    width: '100px',
+    height: '41px',
     color: '#fff',
     backgroundColor: '#286090',
     borderColor: '#204d74',
@@ -39,8 +39,8 @@ export default class ButtonComponent extends Component {
   }
   render() {
     return (
-      <div className="well well-sm col-md-6 text-center menu-item" draggable="true" onDragStart={this.dragstart}>
-        <h6 className="btn-icon">click Here! </h6>
+      <div className="well well-sm col-md-6 text-center menu-item">
+        <h6 className="btn-icon" draggable="true" onDragStart={this.dragstart}>click Here! </h6>
         <a href="#" className="glyphicon ">Button</a>
       </div>
 

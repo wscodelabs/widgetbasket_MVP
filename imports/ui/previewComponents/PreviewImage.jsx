@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class PreviewLabelComponent extends Component {
+export default class PreviewImageComponent extends Component {
   constructor(props){
     super(props)
     this.handleClick = this.handleClick.bind(this)
@@ -12,7 +12,7 @@ export default class PreviewLabelComponent extends Component {
   }
   render() {
     return (
-        <span style={this.props.style} data-randomKey={this.props.randomKey} className="previewComponents" onClick={this.handleClick}>{this.props.value}</span>
+        <img src={this.props.value} style={this.props.style} data-randomKey={this.props.randomKey} className="previewComponents" onClick={this.handleClick}/>
     )
   }
 }

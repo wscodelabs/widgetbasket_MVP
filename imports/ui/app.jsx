@@ -73,7 +73,7 @@ export default class App extends Component {
     toolbar = null
     if(this.state.elements[this.state.selectedElement])
       style = this.state.elements[this.state.selectedElement].style
-    if(this.state.selectedElement && this.state.elements[this.state.selectedElement].type=="button"){
+    if(this.state.selectedElement && (this.state.elements[this.state.selectedElement].type=="button" || this.state.elements[this.state.selectedElement].type=="label")){
       toolbar = <Toolbar style={style} changeStyle={this.changeStyle} value={this.state.elements[this.state.selectedElement].value} changeValue={this.changeValue}/>
     }
     return (

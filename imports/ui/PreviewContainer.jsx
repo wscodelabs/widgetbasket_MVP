@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PreviewButtonComponent from './previewComponents/PreviewButtonComponent.jsx'
 import PreviewLabelComponent from './previewComponents/PreviewLabelComponent.jsx'
-const componentHolderName = {'button':PreviewButtonComponent,'label':PreviewLabelComponent}
+import PreviewImageComponent from './previewComponents/PreviewImage.jsx'
+const componentHolderName = {'button':PreviewButtonComponent,'label':PreviewLabelComponent,'image':PreviewImageComponent}
 export default class PreviewContainer extends Component {
   constructor(props){
     super(props)
@@ -13,7 +14,7 @@ export default class PreviewContainer extends Component {
   }
   dragend(e){
     let offset = $(".preview-container").offset()
-    console.log(e.clientX,e.clientY,offset);
+    console.log(window.selectedElement);
     window.selectedElement.style.left=e.clientX-offset.left-window.cursorOffset.left
     window.selectedElement.style.top=e.clientY-offset.top-window.cursorOffset.top
     this.props.addElement(window.selectedElement)
