@@ -46,7 +46,7 @@ export default class App extends Component {
   addElement(element){
     let currentElements = this.state.elements
     currentElements[element.randomKey]=element
-    this.setState(currentElements)
+    this.setState({elements:currentElements})
   }
   saveWidget(){
     let elements = this.state.elements,
