@@ -3,15 +3,17 @@ import ComponentModel from './db.components'
 let widgetDb = new Mongo.Collection("widget")
 
 Meteor.methods({
-  insertWidget:(widget, compoenet)=>{
+  insertWidget:(widget, compoenet, dom)=>{
     // insert Components
     console.log(compoenet)
     new ComponentModel().insertMany(compoenet)
 
     if(widget._id)
-      return widgetDb.update({_id:widget._id},{$set:{style:widget.style, elements:widget.elements}})
-    else
+      return widgetDb.update({_id:widget._id},{$set:{style:widget.style, elements:widget.elements, dom:dom}})
+    else{
+      widget.dom  = dom
       return widgetDb.insert(widget)
+    }
   },
   getWidget:() =>{
     let parsedWidget=[]

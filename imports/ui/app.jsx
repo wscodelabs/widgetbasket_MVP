@@ -53,9 +53,11 @@ export default class App extends Component {
   }
   saveWidget(){
     let elements = this.state.elements,
-    widget = this.state.widget
+    widget = this.state.widget,
+    dom = $("#container_preview").html()
+    console.log(dom);
     console.log(elements);
-    Meteor.call('insertWidget',widget,elements,function(err,res){
+    Meteor.call('insertWidget',widget,elements,dom,function(err,res){
       if(!err){
         console.log(res+" inserted");
       }
@@ -89,7 +91,7 @@ export default class App extends Component {
           <div className="component-div col-md-3 less-padding left-bar">
             <Sidebar widgetsInfo={window.clone(this.state.widgetsInfo)} changeState={this.changeState} setSelectedElement={this.setSelectedElement}/>
           </div>
-          <div className="col-md-6 less-padding">
+          <div className="col-md-6 less-padding" id="container_preview">
               <PreviewContainer widget={this.state.widget} elements={this.state.elements} addElementInWidget={this.addElementInWidget} addElement={this.addElement} setSelectedElement={this.setSelectedElement}/>
           </div>
           <div className="col-md-3 right-bar less-padding">
