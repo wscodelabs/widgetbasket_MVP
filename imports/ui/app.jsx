@@ -22,7 +22,6 @@ export default class App extends Component {
     let self=this
     Meteor.call('getWidget',function(err,res){
       if(!err){
-        console.log(res);
         self.setState({widgetsInfo:res})
       }
     })
@@ -34,9 +33,13 @@ export default class App extends Component {
     this.setState({elements:currentElements})
   }
   changeState(widgetInfo){
-    console.log(widgetInfo);
-    this.setState({widget:widgetInfo.widget})
-    this.setState({elements:widgetInfo.elements})
+    this.setState({widget:Object.assign({},widgetInfo.widget)})
+    let newElements={}
+    _.each(widgetInfo.elements,function(element,index){
+      element.style=Object.assign({},element.style)
+      newElements[element.randomKey]=Object.assign({},element)
+    })
+    this.setState({elements:newElements})
   }
   addElementInWidget(randomKey){
     let currentWidget = this.state.widget
@@ -51,7 +54,7 @@ export default class App extends Component {
   saveWidget(){
     let elements = this.state.elements,
     widget = this.state.widget
-    console.log(elements)
+    console.log(elements);
     Meteor.call('insertWidget',widget,elements,function(err,res){
       if(!err){
         console.log(res+" inserted");

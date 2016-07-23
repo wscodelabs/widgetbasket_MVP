@@ -16,7 +16,6 @@ export default class Sidebar extends Component {
 
   toggleLink(e){
     const componentType = $(e.target).attr('data-type')
-    console.log(this)
     if(componentType == this.state.selectedComponent)
     return
 
@@ -38,7 +37,6 @@ export default class Sidebar extends Component {
 
   render() {
     let SelectedComponent= componentHolderName[this.state.selectedComponent];
-    console.log(SelectedComponent)
     return (
       <div className="sidebar">
         <div className="sidebar-header">

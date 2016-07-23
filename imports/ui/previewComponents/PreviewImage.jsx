@@ -12,7 +12,7 @@ export default class PreviewImageComponent extends Component {
   }
   render() {
     return (
-        <img src={this.props.value} style={this.props.style} data-randomKey={this.props.randomKey} className="previewComponents" onClick={this.handleClick}/>
+        <img src={this.props.value} style={this.props.style} data-randomKey={this.props.randomKey} className="previewComponents" onClick={this.handleClick} draggable="false"/>
     )
   }
 }

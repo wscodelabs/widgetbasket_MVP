@@ -14,7 +14,6 @@ export default class PreviewContainer extends Component {
   }
   dragend(e){
     let offset = $(".preview-container").offset()
-    console.log(window.selectedElement);
     window.selectedElement.style.left=e.clientX-offset.left-window.cursorOffset.left
     window.selectedElement.style.top=e.clientY-offset.top-window.cursorOffset.top
     this.props.addElement(window.selectedElement)
